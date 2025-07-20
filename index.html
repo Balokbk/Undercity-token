@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undercity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="dungeon-container">
+        <img src="/images/undercity.png" id="undercity-image" alt="Undercity Image">
+        <div class="dungeon-grid">
+            <div id="secret-entrance" class="room" onclick="toggleLocation('secret-entrance')"></div>
+            <div id="forge" class="room" onclick="toggleLocation('forge')"></div>
+            <div id="lost-well" class="room" onclick="toggleLocation('lost-well')"></div>
+            <div id="trap" class="room" onclick="toggleLocation('trap')"></div>
+            <div id="arena" class="room" onclick="toggleLocation('arena')"></div>
+            <div id="stash" class="room" onclick="toggleLocation('stash')"></div>
+            <div id="archives" class="room" onclick="toggleLocation('archives')"></div>
+            <div id="catacombs" class="room" onclick="toggleLocation('catacombs')"></div>
+            <div id="throne-of-the-dead-three" class="room" onclick="toggleLocation('throne-of-the-dead-three')"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

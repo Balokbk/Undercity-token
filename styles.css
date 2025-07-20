@@ -1,0 +1,114 @@
+body {
+    background-color: #16130E;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#dungeon-container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    aspect-ratio: 597 / 843;
+}
+
+#undercity-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.dungeon-grid {
+    position: relative;
+    top: 20.4%;
+    left: 8.3%;
+    width: 83.6%;
+    height: 70.4%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 16.2%);
+    gap: 0;
+}
+
+.room {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+#secret-entrance {
+    height: 14.5%;
+    width: 100%;
+    grid-column: span 3;
+    grid-row: 1;
+}
+
+#forge {
+    height: 17%;
+    width: 50%;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#lost-well {
+    left: 27%;
+    height: 17%;
+    width: 73%;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#trap {
+    height: 28.5%;
+    width: 36.6%;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#arena {
+    left: 8%;
+    width: 35.1%;
+    height: 28.5%;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#stash {
+    left: -8.4%;
+    height: 28.5%;
+    width: 109%;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#archives {
+    top: 9%;
+    height: 39%;
+    width: 49.3%;
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#catacombs {
+    top: 9%;
+    left: 27%;
+    height: 39%;
+    width: 73%;
+    grid-column: 2;
+    grid-row: 4;
+}
+
+#throne-of-the-dead-three {
+    top: 29%;
+    height: 71.3%;
+    width: 100%;
+    grid-column: span 3;
+    grid-row: 5;
+}
