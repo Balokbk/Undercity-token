@@ -25,7 +25,7 @@ function toggleLocation(location){
         container.className = 'img-player-container'
 
         const img = document.createElement('img')
-        img.src = `images/${itens[roomsState[location]]}`
+        img.src = `./images/${itens[roomsState[location]]}`
         img.className = 'player-token'
         
         container.appendChild(img)
