@@ -32,5 +32,3 @@ function toggleLocation(location){
         room.appendChild(container)
     }
 }
-
-//<div class="img-player-container"><img src="images/green-token.png" class="player-token"></div>
