@@ -5,14 +5,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: autoj;
 }
 
 #dungeon-container {
     position: relative;
     width: 100%;
     max-width: 1080px;
-    aspect-ratio: 597 / 843;
+    aspect-ratio: 149 / 208;
 }
 
 #undercity-image {
