@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="dungeon-container">
-        <img src="./images/undercity.png" id="undercity-image" alt="Undercity Image">
-        <div class="dungeon-grid">
-            <div id="secret-entrance" class="room" onclick="toggleLocation('secret-entrance')"></div>
-            <div id="forge" class="room" onclick="toggleLocation('forge')"></div>
-            <div id="lost-well" class="room" onclick="toggleLocation('lost-well')"></div>
-            <div id="trap" class="room" onclick="toggleLocation('trap')"></div>
-            <div id="arena" class="room" onclick="toggleLocation('arena')"></div>
-            <div id="stash" class="room" onclick="toggleLocation('stash')"></div>
-            <div id="archives" class="room" onclick="toggleLocation('archives')"></div>
-            <div id="catacombs" class="room" onclick="toggleLocation('catacombs')"></div>
-            <div id="throne-of-the-dead-three" class="room" onclick="toggleLocation('throne-of-the-dead-three')"></div>
+    <div class="img-container">
+        <div class="rooms-container">
+            <div class="room" id="secret-entrance"></div>
+            <div class="room" id="forge"></div>
+            <div class="room" id="lost-well"></div>
+            <div class="room" id="trap"></div>
+            <div class="room" id="arena"></div>
+            <div class="room" id="stash"></div>
+            <div class="room" id="archives"></div>
+            <div class="room" id="catacombs"></div>
+            <div class="room" id="throne-of-the-dead-three"></div>
         </div>
+        <img src="./images/undercity.png" id="undercity-img"></div>
+    </div>
+    <div class="players-container">
+
     </div>
     <script src="index.js"></script>
 </body>
