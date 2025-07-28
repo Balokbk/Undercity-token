@@ -1,127 +1,227 @@
 body {
     background-color: #16130E;
     margin: 0;
-    display: flex;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: scroll;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: rgb(20, 20, 20);
 }
 
-#dungeon-container {
+.img-container {
     position: relative;
-    width: 100%;
-    max-width: 1080px;
-    aspect-ratio: 149 / 208;
+    width: 745px;
+    height: 1040px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
-#undercity-image {
-    position: absolute;
+#undercity-img {
     width: 100%;
+    max-width: 745px;
     height: 100%;
-    display: block;
+    max-height: 1040px;
     object-fit: contain;
+    z-index: 1;
 }
 
-.dungeon-grid {
-    position: relative;
-    top: 20.4%;
-    left: 8.3%;
-    width: 83.6%;
-    height: 70.4%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 16.2%);
-    gap: 0;
-}
-
-.room {
+.rooms-container {
     position: absolute;
-    box-sizing: border-box;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    width: 620px;
+    height: 740px;
+    max-width: 1080px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:
+        /* 1 */
+        107px
+        /* 2 */
+        103px
+        /* 3 */
+        143px
+        /* 4 */
+        144px
+        /* 5 */
+        184px;
+
+    row-gap: 15px;
+
+    justify-content: center;
+    align-items: center;
     z-index: 2;
 }
 
+.room{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
 #secret-entrance {
-    height: 14.5%;
     width: 100%;
+    height: 100%;
+
     grid-column: span 3;
     grid-row: 1;
 }
 
 #forge {
-    height: 17%;
-    width: 50%;
+    width: 305px;
+    height: 100%;
+
     grid-column: 1;
     grid-row: 2;
 }
 
-#lost-well {
-    left: 27%;
-    height: 17%;
-    width: 73%;
-    grid-column: 2;
+#lost-well{
+    width: 96%;
+    height: 100%;
+
+    margin-left: 13px;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
     grid-row: 2;
 }
 
 #trap {
-    height: 28.5%;
-    width: 36.6%;
+    width: 226px;
+    height: 100%;
+
     grid-column: 1;
     grid-row: 3;
 }
 
 #arena {
-    left: 8%;
-    width: 35.1%;
-    height: 28.5%;
+    width: 144px;
+    height: 100%;
+
+    margin-left: -67px;
+
     grid-column: 2;
     grid-row: 3;
 }
 
 #stash {
-    left: -8.4%;
-    height: 28.5%;
-    width: 109%;
+    width: 142%;
+    height: 100%;
+
+    margin-left: -65px;
+
     grid-column: 3;
     grid-row: 3;
 }
 
 #archives {
-    top: 9%;
-    height: 39%;
-    width: 49.3%;
+    width: 100%;
+    height: 100%;
+    
     grid-column: 1;
     grid-row: 4;
 }
 
 #catacombs {
-    top: 9%;
-    left: 27%;
-    height: 39%;
-    width: 73%;
-    grid-column: 2;
+    width: 96%;
+    height: 100%;
+    
+    margin-left: 13px;
+    
+    grid-column-start: 2;
+    grid-column-end: 4;
     grid-row: 4;
 }
 
 #throne-of-the-dead-three {
-    top: 29%;
-    height: 71.3%;
     width: 100%;
+    height: 100%;
+
     grid-column: span 3;
     grid-row: 5;
 }
 
-.img-player-container {
-    position: relative;
+.players-container{
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
     width: 100%;
     height: 100%;
+    min-height: 500px;
+    margin-bottom: 0 auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.player-token{
-    position: absolute;
+.player {
+    width: 100%;
     height: 100%;
-    opacity: 0.6;
+    max-width: 500px;
+    max-height: 500px;
+    cursor: pointer;
+    object-fit: contain;
+    opacity: 0.5;
+}
+
+.player-selector {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    cursor: pointer;
+    object-fit: contain;
+    opacity: 0.4;
+}
+
+.players-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-gap: 40px;
+    background-color: #221e17;
+}
+
+.player-name {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+}
+
+.selected {
+    opacity: 1;
+}
+
+#clear-button{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    top: -20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    user-select: none;
+
+    grid-column: 4;
+    grid-row: 2;
+    border: solid 2px rgb(20, 20, 20);
+    border-radius: 5px;
+    background-color: #5f594f;
 }

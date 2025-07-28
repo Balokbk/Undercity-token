@@ -5,20 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undercity</title>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="dungeon-container">
-        <img src="./images/undercity.png" id="undercity-image" alt="Undercity Image">
-        <div class="dungeon-grid">
-            <div id="secret-entrance" class="room" onclick="toggleLocation('secret-entrance')"></div>
-            <div id="forge" class="room" onclick="toggleLocation('forge')"></div>
-            <div id="lost-well" class="room" onclick="toggleLocation('lost-well')"></div>
-            <div id="trap" class="room" onclick="toggleLocation('trap')"></div>
-            <div id="arena" class="room" onclick="toggleLocation('arena')"></div>
-            <div id="stash" class="room" onclick="toggleLocation('stash')"></div>
-            <div id="archives" class="room" onclick="toggleLocation('archives')"></div>
-            <div id="catacombs" class="room" onclick="toggleLocation('catacombs')"></div>
-            <div id="throne-of-the-dead-three" class="room" onclick="toggleLocation('throne-of-the-dead-three')"></div>
+    <div class="img-container">
+        <div class="rooms-container">
+            <div class="room" id="secret-entrance"></div>
+            <div class="room" id="forge"></div>
+            <div class="room" id="lost-well"></div>
+            <div class="room" id="trap"></div>
+            <div class="room" id="arena"></div>
+            <div class="room" id="stash"></div>
+            <div class="room" id="archives"></div>
+            <div class="room" id="catacombs"></div>
+            <div class="room" id="throne-of-the-dead-three"></div>
+        </div>
+        <img src="./images/undercity.png" id="undercity-img"></div>
+    </div>
+    <div class="players-container">
+        <div id="clear-button">Clear all</div>
+        <div class="player-container" id="player-container-1">
+            <div class="player-name" id="player-name-1">Player 1</div>
+            <img src="./images/green-token.png" alt="Player 1 Token" class="player-selector" onclick="selectPlayer(1)">
+        </div>
+        <div class="player-container" id="player-container-2">
+            <div class="player-name" id="player-name-2">Player 2</div>
+            <img src="./images/red-token.png" alt="Player 2 Token" class="player-selector" onclick="selectPlayer(2)">
+        </div>
+        <div class="player-container" id="player-container-3">
+            <div class="player-name" id="player-name-3">Player 3</div>
+            <img src="./images/blue-token.png" alt="Player 3 Token" class="player-selector" onclick="selectPlayer(3)">
+        </div>
+        <div class="player-container" id="player-container-4">
+            <div class="player-name" id="player-name-4">Player 4</div>
+            <img src="./images/yellow-token.png" alt="Player 4 Token" class="player-selector" onclick="selectPlayer(4)">
         </div>
     </div>
     <script src="index.js"></script>
