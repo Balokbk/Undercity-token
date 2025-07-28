@@ -3,11 +3,11 @@ const playerPositions = {}
 let currentPlayer = null
 
 function selectPlayer(player){
-    const players = document.querySelectorAll('.player')
+    const players = document.querySelectorAll('.player-selector')
     players.forEach((p, index) => {
-        p.classList.toggle('selected', index  === player )
+        p.classList.toggle('selected', index  === player - 1)
     })
-    currentPlayer = player
+    currentPlayer = player  
 }
 
 const rooms = document.querySelectorAll('.room')
