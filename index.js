@@ -1,34 +1,55 @@
-const itens = ['none', 'green-token.png', 'red-token.png', 'redNGreen-token.png']
-const roomsState = {}
+const itens = ['none', 'green-token.png', 'red-token.png', 'blue-token.png', 'yellow-token.png']
+const playerPositions = {}
+let currentPlayer = null
 
-function toggleLocation(location){
+function selectPlayer(player){
+    const players = document.querySelectorAll('.player')
+    players.forEach((p, index) => {
+        p.classList.toggle('selected', index  === player )
+    })
+    currentPlayer = player
+}
 
-    const room = document.getElementById(location)
+const rooms = document.querySelectorAll('.room')
 
-    if(!(location in roomsState)){
-        roomsState[location] = 0
-    }
+rooms.forEach( room => {
+    room.addEventListener('click', () => {
+        if(!currentPlayer){
+            return
+        }
+        const roomId = room.id
 
-    const existingContainer = room.querySelector('.img-player-container')
-    if(existingContainer){
-        existingContainer.remove()
-    }
-    
-    
-    if(roomsState[location] == 3) {
-        roomsState[location] = 0
-        return
-    } else {
-        roomsState[location]++
+        const existingPlayer = room.querySelector(`.player[data-player="${currentPlayer}"]`)
+        if(existingPlayer) return
 
-        const container = document.createElement('div')
-        container.className = 'img-player-container'
+        if(playerPositions[currentPlayer]){
+            const prevRoomId = playerPositions[currentPlayer]
+            const prevRoom = document.getElementById(prevRoomId)
+            const oldToken = prevRoom.querySelector(`.player[data-player="${currentPlayer}"]`)
+            if(oldToken){
+                oldToken.remove()
+            }
+        }
 
         const img = document.createElement('img')
-        img.src = `./images/${itens[roomsState[location]]}`
-        img.className = 'player-token'
-        
-        container.appendChild(img)
-        room.appendChild(container)
+        img.src = `./images/${itens[currentPlayer]}`
+        img.classList.add('player')
+        img.dataset.player = currentPlayer
+        room.appendChild(img)
+
+        playerPositions[currentPlayer] = roomId
+    })
+})
+
+document.getElementById('clear-button').addEventListener('click', () => {
+    const rooms = document.querySelectorAll('.room')
+    rooms.forEach(room => {
+        const players = room.querySelectorAll('.player')
+        players.forEach(p => {
+            p.remove()
+        })
+    })
+    for(let key in playerPositions){
+        delete playerPositions[key]
     }
-}
+})
